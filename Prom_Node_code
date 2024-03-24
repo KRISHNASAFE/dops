@@ -1,0 +1,122 @@
+****************NODE EXPORTER*****************
+
+Step 1:
+Create directory node_exporter
+
+Step 2:
+Go to temp directory, download node_exporter build.
+
+Step 3:
+Create user node_exporter 
+sudo useradd -s /bin/false node_exporter
+
+Step 4:
+Unzip node_exporter and move folder to directory named node_exporter under bin.
+
+Step 5:
+Create file node_exporter.service
+
+sudo nano /etc/systemd/system/node_exporter.service
+
+
+node_exporter.service :-
+[Unit]
+Description=Node Exporter
+After=network.target
+[Service]
+User=node_exporter
+Group=node_exporter
+Type=simple
+ExecStart=/usr/local/bin/node_exporter
+[Install]
+WantedBy=multi-user.target
+
+Step 6:
+
+sudo systemctl daemon-reload
+sudo systemctl enable node_exporter
+sudo systemctl start node_exporter
+sudo systemctl status node_exporter
+
+*************PROMETHEUS**************
+
+Prometheus Installation :
+1. Create group and user prometheus.
+sudo groupadd --system prometheus
+sudo useradd -s /sbin/nologin --system -g prometheus prometheus
+2. create data directory for prometheus.
+sudo mkdir /var/lib/prometheus
+3. prometheus creates the configuration directory.
+sudo mkdir -p -m 775 /etc/prometheus/{rules, rules.d,files_sd}
+4. download and extract prometheus.
+cd /tmp
+export RELEASE=2.8.1
+wget https://github.com/prometheus/prometheus/releases/download/v ${RELEASE} /prometheus-${RELEASE}.linux-amd64.tar.gz
+tar xvf prometheus-${RELEASE}.linux-amd64.tar.gz
+cd prometheus${RELEASE}.linux-amd64/
+5. Copy prometheus binary, consoles, console_libraries.
+sudo cp prometheus promtool /usr/local/bin
+sudo cp -r consoles/ console_libraries/ /etc/prometheus/
+6. Create prometheus configuration file.
+sudo vi /etc/prometheus/prometheus.yml
+	
+PROMETHEUS.YML content :
+#Global config
+global:
+scrape_interval: 15s #set the scrape interval to every 15 seconds. Default is every 1 minute.
+evaluation_interval: 15s #Evaluate every 15s, Default is every 1 minute.
+scrape_timeout: 15s #scrape timeout is set global default.    
+
+#A scrape configuration containing exactly one endpoint to scrape :#Here it's prometheus itself.
+-job_name:'prometheus'
+
+	# metrics_path default to '/metrics'.
+	# scheme defaults to 'http'.
+
+	static_configs:
+	- targets: ['localhost:9090']
+
+7. Create a prometheus systemd service unit file.
+sudo vi /etc/systemd/system/prometheus.service
+8. The content prometheus systemd service as below:
+
+[Unit]
+Description=Prometheus
+Documentation=https://prometheus.io/docs/introduction/overview/
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+# Environment="GOMAXPROCS=2"
+User=prometheus
+Group=prometheus
+ExecReload=/bin/kill -HUP $MAINPID
+ExecStart=/usr/local/bin/prometheus \
+--config.file=/etc/prometheus/prometheus.yml \
+--storage.tsdb.path=/var/lib/prometheus \
+--web.console.templates=/etc/prometheus/consoles \
+--web.console_libraries=/etc/prometheus/console_libraries \
+--web.listen-address=0.0.0.0:9090 \
+--web.external-url=
+
+
+SyslogIdentifier=prometheus
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+9. Clean Install.
+rm -rf prometheus-${RELEASE}.linux-amd64.tar.gz
+rm -rf prometheus-${RELEASE}.linux-amd64/
+
+10. Change directory permission.
+sudo chown -R prometheus:prometheus /etc/prometheus
+sudo chown -R prometheus:prometheus /var/lib/prometheus/
+
+11.Reload system daemon & start prometheus service.
+sudo systemctl daemon-reload
+sudo systemctl start prometheus

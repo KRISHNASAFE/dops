@@ -5,4 +5,9 @@ terraform{
       version = ""
     }
   }
+required_version = ""  
+}
+
+provider "azurerm" {
+  feature{}
 }

@@ -86,8 +86,8 @@ sudo nano /etc/hosts
 For every VM, add the IP and  Hostname of other VMs it will communicate with .
 
 ```
-192.168.xxx.xxx worker1 ``` # For every node, add IP and HOSTNAME
-
+192.168.xxx.xxx worker1 # For every node, add IP and HOSTNAME
+``` 
 # Enable kernel module & Configure systemctl
 Enable kernel modules
 ```
@@ -132,7 +132,9 @@ EOF
 ```
 
 Reload sysctl
-```sudo sysctl --version```
+```
+sudo sysctl --version
+```
 
 Install CRI-O
 ```

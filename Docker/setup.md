@@ -19,6 +19,9 @@ Once VB installation is done, we proceed with creation of vm.
 
 a. Open VB & click new.
 Dialogue box will open.
+<img width="826" height="747" alt="image" src="https://github.com/user-attachments/assets/7135526d-52a3-4fd6-8891-2eb8cbdf9454" /> 
+
+
 
 
 

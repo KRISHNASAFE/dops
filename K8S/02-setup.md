@@ -11,10 +11,14 @@ Else you can follow https://github.com/KRISHNASAFE/dops/blob/main/Docker/01-setu
 # Network on Virtualbox for VM 
 
 You can set value as Bridged Adapter 
-<img width="942" height="493" alt="image" src="https://github.com/user-attachments/assets/316c2720-5ea3-486a-9a19-e1f7cdc0d7f3" /> 
- OR 
- Host-Only Adapter
- <img width="941" height="467" alt="image" src="https://github.com/user-attachments/assets/71dc1c84-4c58-4bad-9261-8efe81e57211" />
+
+<img width="913" height="486" alt="image" src="https://github.com/user-attachments/assets/4f4a6c27-397b-497f-b084-8f876f835ccc" />
+
+OR 
+ 
+Host-Only Adapter
+
+
 OR 
 Create NAT network and Bridged adapter using 2 network adapters. 
 

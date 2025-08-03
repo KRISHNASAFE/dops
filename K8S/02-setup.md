@@ -26,6 +26,6 @@ Turn on VM and switch
 ```
 function test(){
 console.log("This block of code will have copy button at right of it");
-su 
 }
+su
 ```

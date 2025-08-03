@@ -21,11 +21,13 @@ Create NAT network and Bridged adapter using 2 network adapters.
 I have created cluster using both mention method but I am using Bridged adapter here. 
 Also I will provide links for this different setups at the end of this article, you can go through it if you wish. 
 
-# Ubuntu Setup 
-Turn on VM and switch 
-```
 function test(){
 console.log("This block of code will have copy button at right of it");
 }
+
+# Ubuntu Setup 
+Turn on VM and switch 
 ```
-su 
+su
+```
+ 

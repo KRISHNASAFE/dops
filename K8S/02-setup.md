@@ -181,12 +181,30 @@ Check cluster status
 kubectl cluster-info
 ```
 
+# Use CNI 
+I have used calico as network interface. 
+***************************************************
+Why --pod-network-cidr=192.168.0.0/16?
+This sets the CIDR for the pod network.
+Calico requires this to route traffic between pods.
+***************************************************
+
+# Apply Calico manifest 
+
+```
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.27.0/manifests/calico.yaml
+```
+
 # Join worker nodes
 ```
 kubeadm join 192.168.XXX.XXX:6443 --token  $your_token\
   --discovery-token-ca-cert-hash $your_hash
 ```
 You can join any number of worker nodes by executing command as root.
+
+Check below image :
+
+<img width="940" height="364" alt="image" src="https://github.com/user-attachments/assets/bbb9faa8-ed61-4322-a75d-4080c9981d0b" />
 
 # Additional Notes
 If want take snapshot of initial nodes. This will allow you to restore your initial cluster state all time.

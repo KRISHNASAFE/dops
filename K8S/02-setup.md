@@ -18,6 +18,7 @@ OR
  
 Host-Only Adapter
 
+<img width="923" height="421" alt="image" src="https://github.com/user-attachments/assets/51de1194-5ae1-461b-b07e-2d388abbaa00" />
 
 OR 
 Create NAT network and Bridged adapter using 2 network adapters. 

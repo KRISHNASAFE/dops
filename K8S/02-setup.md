@@ -191,10 +191,16 @@ You can join any number of worker nodes by executing command as root.
 # Additional Notes
 If want take snapshot of initial nodes. This will allow you to restore your initial cluster state all time.
 
-# References
+# References & Additional Links
 
 <a href="https://www.virtualbox.org/manual/ch06.html">Networking</a>
+<a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/">Installing Kubeadm</a>
+<a href="https://cri-o.io/">CRI-O</a>
+<a href="https://medium.com/@gunjangarge/create-kubernetes-cluster-using-kubeadm-on-ubuntu-virtualbox-step-by-step-68a3eeb1f74c"></a>
+<a href="https://github.com/hereishd/K8S-Cluster-From-Scratch/tree/main"></a>
+<a href="https://hacksheets.in/kubernetes-cluster-setup-in-laptop-using-virtualbox/"></a>
 
+This link also involves setups done by other people which help me to understand some topics, necessary settings. You also can refer them and setup your cluster.
 
 
 

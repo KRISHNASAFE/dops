@@ -7,10 +7,10 @@ Let's run,
 kubectl get pods -A
 ```
 After running this, will get insights into pods running on our node.  
-<img width="940" height="492" alt="image" src="https://github.com/user-attachments/assets/da09f921-b5bc-4bea-b0cc-7f65f2792b34" />
+<img width="740" height="204" alt="image" src="https://github.com/user-attachments/assets/e4b16edb-e771-4d87-9ef8-8ecd37ce4a6a" />
 
 Now will check application our application. 
-<img width="940" height="483" alt="image" src="https://github.com/user-attachments/assets/fef2178d-9db6-4c3b-8a7f-58f7cb73012a" />
+![Uploading image.png…]()
 
 This is currently running version of our application.
 Now I will change or update some content in file and regenerate new Dockerfile so that will get new image with changes. 

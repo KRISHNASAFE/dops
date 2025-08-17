@@ -10,7 +10,7 @@ After running this, will get insights into pods running on our node.
 <img width="740" height="204" alt="image" src="https://github.com/user-attachments/assets/e4b16edb-e771-4d87-9ef8-8ecd37ce4a6a" />
 
 Now will check application our application. 
-![Uploading image.png…]()
+<img width="747" height="360" alt="image" src="https://github.com/user-attachments/assets/4cd4706f-44db-4e2d-a4b4-ec89c55d557e" />
 
 This is currently running version of our application.
 Now I will change or update some content in file and regenerate new Dockerfile so that will get new image with changes. 

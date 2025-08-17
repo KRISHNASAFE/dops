@@ -3,7 +3,7 @@ Before starting with this, I hope you have visited and once have go-through of a
 Here in this setup/example, we will be going into practical approach for rollback, update containerized application.
 
 Diagram below shows deployment lifecycle. 
-< img width="740" height="204" alt="image" src="https://garba.org/posts/2020/k8s-life-cycle/k8s-life-cycle-2.jpg" />
+<img width="740" height="204" alt="image" src="https://garba.org/posts/2020/k8s-life-cycle/k8s-life-cycle-2.jpg" />
 
 So my set up is pretty easy peasy which involves very basic simple multiplication application which I have used previously. 
 Let's run,

@@ -89,6 +89,23 @@ Below provided are my deployments.
 So **5th** Revision is my latest version with updated image. 
 Now I have to roll back to previous version that is Revision 4. 
 
+I will be using below command.
+```
+kubectl rollout undo deployment/static-web-app
+```
+
+Here my deployment is static-web-app so using it, you should change as per your naming conventions.
+
+<img width="584" height="208" alt="image" src="https://github.com/user-attachments/assets/3e5c212d-df5c-409f-a701-b24fa7959801" />
+
+SO in above pic previous release was revision 4 and current release is number 5. So on executing above command previous release number 4 becomes latest release removing 4 and adding number of latest release 6. 
+Let's test the application whether it is moved to old version or not.
+
+<img width="738" height="432" alt="image" src="https://github.com/user-attachments/assets/1f9c8766-5bd9-4db0-92bd-60695ee088fb" />
+
+So yes old application deployment has been deployed and currently running. 
+
+
 
 
 

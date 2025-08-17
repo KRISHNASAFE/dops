@@ -50,9 +50,10 @@ Then run
 kubectl get pods -A
 ```
 I have tried to capture container creating process or lifecycle as below: 
+
 <img width="773" height="620" alt="image" src="https://github.com/user-attachments/assets/10d16f15-8c2b-4c1e-94cf-4e49ca619cbd" />
 
-Here we can see old pods are getting terminated and for new pods it is creating container and as I have specified. 2 pods of static-web-app with new image are in running state. 
+Here we can see old pods are getting terminated and for new pods it is creating container and as I have specified 2 pods of static-web-app with new image are in running state also we can see container state(Terminating, container creating ...... )
 
 
 

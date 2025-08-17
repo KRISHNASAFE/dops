@@ -64,6 +64,52 @@ Once pods are running with new image check the application running and confirm w
 yuhuuu ! hurray !
 Congrats, new updated image has pulled and changes can be seen in application. 
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# How to rollback......?
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+First of all why rollback is needed ?
+Let's assume that we deploy our application new version which is having newly added features, UI and some other changes. But after deploying the app to PRODUCTION system some how it started creating various issues which are faced by end user or people who use the application or client. Having such application which is giving issues which are creating major impact hampering maybe even basic functionality incur in huge loss to client, company. 
+Hence we want to make the system stable again maybe with some old version for time being so that we can again thoroughly test the new updated changes on lower systems and then deploy which enhances user experience along with existing functionality not getting tampered.
+
+Kubernetes gives us flexibility to do that using CLI also or if companies are using argo CD then they can deploy previous stable version using argo CD web interface or CLI....
+We focus on simple thing to understand concept. Run below command.
+```
+kubectl rollout history deployment $name_of_app
+```
+If single service is running then just it's fine with 
+```
+kubectl rollout history deployment
+````
+
+On running this command, it gives history about all deployments for the application as follows(involves 2 columns as Revision & Change-Cause)
+Below provided are my deployments. 
+
+<img width="701" height="169" alt="image" src="https://github.com/user-attachments/assets/35b4a3c8-d36c-42c8-bd10-39cd3889e603" />
+
+So **5th** Revision is my latest version with updated image. 
+Now I have to roll back to previous version that is Revision 4. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

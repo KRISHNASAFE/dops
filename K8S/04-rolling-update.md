@@ -36,7 +36,9 @@ docker images
 
 This will list our latest image with tag v4.
 Now upload this image to your docker hub account and then will move again k8s. 
+
 After uploading new image, will change our deployment file with latest image as below: 
+
 <img width="432" height="217" alt="image" src="https://github.com/user-attachments/assets/e144102b-f4d1-4dcb-9fb9-42e6e6993e49" />
 
 Here, I have highlighted and ask to use latest v4 image. 
@@ -53,7 +55,16 @@ I have tried to capture container creating process or lifecycle as below:
 
 <img width="773" height="620" alt="image" src="https://github.com/user-attachments/assets/10d16f15-8c2b-4c1e-94cf-4e49ca619cbd" />
 
-Here we can see old pods are getting terminated and for new pods it is creating container and as I have specified 2 pods of static-web-app with new image are in running state also we can see container state(Terminating, container creating ...... )
+Here we can see old pods are getting terminated and for new pods it is creating container and as I have specified 2 pods of static-web-app with new image are in running state also we can see container state.............
+
+Once pods are running with new image check the application running and confirm whether updated changes can be seen or not. 
+
+<img width="702" height="355" alt="image" src="https://github.com/user-attachments/assets/a791be1f-f9ff-40bc-b429-3182d9b5030d" />
+
+yuhuuu ! hurray !
+Congrats, new updated image has pulled and changes can be seen in application. 
+
+
 
 
 

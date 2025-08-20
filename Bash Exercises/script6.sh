@@ -221,3 +221,67 @@
 #}
 
 #isPrime
+
+
+# Write a shell script that accepts a number greater than 3 and prints the Fibonacci sequence up to that term. 
+# DO NOT USE RECURSIVE FUNCTION.
+
+#read -p "Enter number:" num
+
+#if [ $num -le 3 ]; then
+#echo "Enter number greater than 3"
+#exit
+#fi
+
+#num1=0;
+#num2=1;
+#num3=$(($num1+$num2))
+
+#echo "$num 1, $num2"
+
+#fibonacci() {
+#    for((i = 3;i <= $num; i++)); do {
+#        echo -n "Fibo: $num3"
+#        num1=$num2
+#        num2=$num3
+#        num3=$(($num1+$num2))
+#    }
+#    done
+#    echo " "
+#}
+
+
+#fibonacci
+
+
+# Write a shell script that accepts a number greater than 3 and prints the Fibonacci sequence up to that term. 
+# But you MUST USE RECURSIVE FUNCTION here.
+
+read -p "Enter a numnber:" num
+
+if [ $num -le 3 ]; then
+echo "Please enter number greate than 3"
+exit
+fi
+
+echo -n "Fibonacci series of $num terms is:" 
+
+fibo() {
+if [ "$1" -le 1 ]; then
+echo -n "$1"
+else
+echo -n $(( $(fibo $(($1 - 1)) ) + $(fibo $(($1 - 2)) ) ))
+fi
+}
+
+for (( i=0; i<$num; ++i)); do
+fibo $i
+# Print , and space between the numbers except the last one
+if [ "$i" -lt $(($num -1)) ]; then
+echo -n ", "
+fi
+done
+echo ""
+
+
+fibo

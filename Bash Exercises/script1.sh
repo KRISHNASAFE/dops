@@ -82,5 +82,7 @@ echo "command has finished"
 
 
 
-
+https://linuxhandbook.com/run-shell-script/ 
+https://www.hackerrank.com/domains/shell
+https://www.w3resource.com/bash-script-exercises/index.php
 

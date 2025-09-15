@@ -13,12 +13,18 @@ multiplication-app.js
 I will also upload this files for reference.
 My dockerfile for this simple app: -
 # Image that we will be using, nginx:alpine image is light weight so using it.
+'''
 FROM nginx:alpine
+'''
 # Created another directory and added the required app files in it.
 # using below instruction we are adding those files from machine directory to a loation/directory inside container.
+'''
 ADD multi-app/ /usr/nginx/share/html
+'''
 # Mentioning port to expose port so application can be accessed. 
+'''
 EXPOSE 80
+'''
 
 Step 2: -
 Now will build image from Dockerfile.

@@ -22,7 +22,7 @@ The current image is v3 of application, after generating new image will tag it a
 So just go to your application folder, change any file like html or css as per your need and save the file. 
 I am changing html file and writing one simple sentence as: 
 ```
-<h4> This is updated version of game </h4>
+This is updated version of game. 
 ```
 Save the file, and run 
 ```
